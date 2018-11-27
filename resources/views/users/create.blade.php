@@ -2,6 +2,8 @@
 @extends("_includes.template")
 
 @section("content")
+<div class="card divTemplate text-center col-md-6 offset-md-3 ">
+            <div class="card-body">
 <div class="d-flex flex-column align-items-center text-center" >
 <h4 class="card-header" >S'enregistrer</h4>
 <form action="/users" method="POST">
@@ -35,6 +37,8 @@
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+</div>
 </div>
 
 @endsection
