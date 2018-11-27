@@ -11,8 +11,28 @@
     <title>Blog Manga Naïto</title>
   </head>
   <body>
-      
-     <!-- <img src="{{ asset("images/BlameFont.jpg") }}" alt="BlameFont">-->
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ route('index') }}">BLOG Naïto</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                @guest
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/users/create">@lang('Inscription')</a></li>
+                @else
+                    <li class="nav-item">
+                        <a id="logout" class="nav-link" href="{{ route('logout') }}">@lang('Déconnexion')</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hide">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                @endguest
+            </ul>
+        </div>
+    </nav>
 
     <div class="container-fluid">
         
@@ -20,6 +40,18 @@
         
         
     </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    @yield('script')
+    <script>
+        $(() => {
+            $('#logout').click((e) => {
+                e.preventDefault()
+                $('#logout-form').submit()
+            })
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
   </body>
 </html>
