@@ -1,0 +1,9 @@
+body {
+    background-image: url("/images/BlameFont.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.divTemplate {
+    background-color: rgba(255, 20, 147,0.76423);
+}
