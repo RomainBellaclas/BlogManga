@@ -2,4 +2,9 @@
 
 @section("content")
 
+<div class="card">
+
+
+</div>
+
 @endsection
