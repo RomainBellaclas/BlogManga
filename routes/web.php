@@ -13,5 +13,5 @@
 Auth::routes();
 Route::get('/', 'IndexController@index')->name('index');
 
-route::get("/users/create", "UserController@create");
+route::get("/users/create", "UserController@create")->name('create');
 route::post("/users", "UserController@store");

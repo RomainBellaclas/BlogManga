@@ -2,7 +2,7 @@
 
 @section("content")
 
-<!-- New Post -->
+<!-- Carousel New Post -->
 
 <div class="card col-md-8 offset-md-2" style=" margin-top: 5%; width: 50rem;">
 
@@ -34,5 +34,28 @@
     </div>
 
 </div>
+
+<!-- actu new post -->
+<div class="container col-md-8" style="float: left;">
+    <div class="post-list card text-center" style=" margin-top: 5%;">
+        <div class="card-header post-list-header">
+            <h3>
+                Actualité
+            </h3>
+    </div>
+            <img class="rounded mx-auto d-block card-image-top" src="{{('images/MangaFont.jpg')}}" alt="Card image cap" style="width: 18rem;">
+            
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+
+            <hr/>
+
+    </div>
+</div>
+
+
 
 @endsection

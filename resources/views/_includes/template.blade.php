@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href=" {{asset("css/site.css")}}">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
     <title>Blog Manga Naïto</title>
   </head>
   <body>
@@ -21,7 +22,7 @@
             <ul class="navbar-nav ml-auto">
                 @guest
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/users/create">@lang('Inscription')</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('create') }}">@lang('Inscription')</a></li>
                 @else
                     <li class="nav-item">
                         <a id="logout" class="nav-link" href="{{ route('logout') }}">@lang('Déconnexion')</a>

@@ -7,3 +7,10 @@ body {
 .divTemplate {
     background-color: rgba(255, 255, 255, 0.801);
 }
+div .post-list{
+    background-color: rgba(255, 255, 255, 0.904)
+}
+
+div .post-list-header{
+    background-color: rgb(212, 212, 212)
+}
