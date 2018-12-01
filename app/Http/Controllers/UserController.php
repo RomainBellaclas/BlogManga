@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -40,7 +41,7 @@ class UserController extends Controller
         $request->validate([
             "firstname" => "required|min:1|max:255",
             "lastname" => "required|min:1|max:255",
-            "mail" => "required|min:1|max:255|email",
+            "mail" => "required|min:1|max:255|email|unique:users",
             "password" => "required|min:8|confirmed",
         ]);
 
@@ -56,6 +57,7 @@ class UserController extends Controller
         ]);
 
             echo "L'utilisateur {$request->mail} a été créer";
+            return redirect("/");
 
     }
 
@@ -104,5 +106,36 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login()
+    {
+        return view("users.login");
+    }
+
+    public function doLogin(Request $request)
+    {
+        $email = $request -> input("mail");
+        $password = $request -> input('password');
+
+        $user = User::where("mail", "=", $email)->first();
+        if($user)
+        {
+            if(Hash::check($password, $user-> password))
+            {
+                Session::put("user", $user);
+                return redirect("/");
+            }
+            return back()->withErrors("Invalid email or password");    
+        }
+
+    }
+
+    public function logout()
+    {
+
+        Session::flush();
+
+        return redirect("/");
     }
 }
