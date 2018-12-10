@@ -38,14 +38,12 @@
                     
                     <hr>
                   
-                                  <!-- the comment box -->
-
-                                      <label for="content">Contenu</label>
-                                      <form role="form">
-                                          <div class="form-group">
-                                              <textarea id="content" class="form-control" rows="3"></textarea>
-                                          </div>
-                                      </form>
+                    <!-- the comment box -->
+                    <div class="form-group">
+                        <label for="content">Contenu</label>
+                        <textarea id="content" class="form-control" name="content" rows="3"></textarea>
+                    </div>
+                    
 
 
                 <button type="submit" class="btn btn-primary">Submit</button>    

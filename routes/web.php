@@ -18,3 +18,4 @@ route::get("/users/login", "UserController@login")->name('users.login');
 route::post("/users/login", "UserController@doLogin");
 route::post("/", 'UserController@logout')->name('users.logout');
 route::resource("posts", "PostController");
+route::resource('index', 'IndexController');

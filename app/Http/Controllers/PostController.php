@@ -49,7 +49,7 @@ class PostController extends Controller
             "user_id"=>Session::get("user")->id,
         ]);
 
-        return redirect("posts.index");
+        return redirect("/posts");
     }
 
     /**

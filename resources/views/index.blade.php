@@ -37,22 +37,27 @@
 
 <!-- actu new post -->
 <div class="container col-md-8" style="float: left;">
-    <div class="post-list card text-center" style=" margin-top: 5%;">
+    <div class="post-list card" style=" margin-top: 5%;">
         <div class="card-header post-list-header">
             <h3>
                 Actualité
             </h3>
     </div>
-            <img class="rounded mx-auto d-block card-image-top" src="{{('images/MangaFont.jpg')}}" alt="Card image cap" style="width: 18rem;">
-            
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        @foreach($posts as $post)
+                      <!-- Blog Post -->
+            <div class="card mb-4">
+                <img class="card-img-top" src="{{('images/XmasMiku.jpg')}}" alt="Card image cap">
+                <div class="card-body">
+                  <h2 class="card-title">{{ $post->title }}</h2>
+                  <p class="card-text">{{ $post->content}}</p>
+                  <a href="{{ route("posts.show", [$post->id]) }}" class="btn btn-primary">En savoir plus... →</a>
+                </div>
+                <div class="card-footer text-muted">
+                        {{ Carbon\Carbon::parse($post->created_at)-> diffForHumans() }} by
+                  <a href="#">{{ $post->user->firstname }} {{ $post->user->lastname }}</a>
+                </div>
             </div>
-
-            <hr/>
-
+        @endforeach
     </div>
 </div>
 
