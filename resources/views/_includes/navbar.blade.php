@@ -5,8 +5,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ route('posts.index') }}">@lang('Postes')</a></li>
             @if(Session::has("user"))
-                <li class="nav-item"><a class="nav-link" href="#">{{Session::get("user")->fisrtname}}</a></li>
+                <li class="nav-item">
+
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{Session::get("user")->firstname}}
+                        </a>
+                              
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{ route('posts.create') }}">Nouveau Post</a>
+                        </div>
+                    </div>
+
+                </li>
                 <li class="nav-item">
                     <a id="logout" class="nav-link" href="{{ route('users.logout') }}">@lang('Déconnexion')</a>
                     <form id="logout-form" action="{{ route('users.logout') }}" method="POST" class="hide">
@@ -18,6 +31,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('users.login') }}">@lang('Connexion')</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('users.register') }}">@lang('Inscription')</a></li>
             @endif
+                        
         </ul>
     </div>
 </nav>
