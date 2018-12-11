@@ -10,7 +10,7 @@
                                 <img class="post-img img-fluid card-img-top thumbnail" src="{{('images/XmasMiku.jpg')}}" alt="Card image cap">
                                 <div class="card-body">
                                   <h2 class="card-title">{{ $post->title }}</h2>
-                                  <p class="card-text">{{ $post->content}}</p>
+                                  <p class="card-text">{!! $post->content !!}</p>
                                   <a href="{{ route("posts.show", [$post->id]) }}" class="btn btn-primary">En savoir plus... →</a>
                                 </div>
                                 <div class="card-footer text-muted">

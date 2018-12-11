@@ -49,7 +49,7 @@
                 <img class="card-img-top" src="{{('images/XmasMiku.jpg')}}" alt="Card image cap">
                 <div class="card-body">
                   <h2 class="card-title">{{ $post->title }}</h2>
-                  <p class="card-text">{{ $post->content}}</p>
+                  <p class="card-text">{!! str_limit($post->content, 255) !!}</p>
                   <a href="{{ route("posts.show", [$post->id]) }}" class="btn btn-primary">En savoir plus... →</a>
                 </div>
                 <div class="card-footer text-muted">
