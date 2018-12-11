@@ -5,7 +5,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="{{ route('posts.index') }}">@lang('Postes')</a></li>
             @if(Session::has("user"))
                 <li class="nav-item">
 
@@ -15,8 +14,10 @@
                         </a>
                               
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('posts.create') }}">Nouveau Post</a>
+                            <a class="dropdown-item" href="{{ route('posts.create') }}">Nouveau Poste</a>
+                            <a class="dropdown-item" href="{{ route('posts.index') }}">Mes postes</a>
                         </div>
+                        
                     </div>
 
                 </li>

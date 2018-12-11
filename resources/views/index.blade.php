@@ -57,6 +57,7 @@
                   <a href="#">{{ $post->user->firstname }} {{ $post->user->lastname }}</a>
                 </div>
             </div>
+            
         @endforeach
     </div>
 </div>
