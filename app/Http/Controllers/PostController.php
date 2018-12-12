@@ -49,7 +49,7 @@ class PostController extends Controller
             "user_id"=>Session::get("user")->id,
         ]);
 
-        return redirect("/posts");
+        return redirect("/posts")->with("success", "Votre poste a bien été créé.");
     }
 
     /**
