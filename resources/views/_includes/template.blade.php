@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
     <title>Blog Manga Naïto</title>
   </head>
-  <body class="img-fluid">
+  <body>
 
     @include("_includes.navbar")
 

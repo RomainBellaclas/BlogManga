@@ -1,16 +1,16 @@
 @extends("_includes.template")
     @section("content")
         <div class="row">
-            <div class="col-9">
+            <div class="col-md-9">
                 <table class="table">
                     <tbody>
-                        @foreach($posts as $post)
+                        @foreach($posts->sortByDesc("created_at") as $post)
                         @if($post->user_id == Session::get("user")->id)
                             <div class="card mb-4 mt-3">
                                 <img class="post-img img-fluid card-img-top thumbnail" src="{{('images/XmasMiku.jpg')}}" alt="Card image cap">
                                 <div class="card-body">
                                   <h2 class="card-title">{{ $post->title }}</h2>
-                                  <p class="card-text">{!! $post->content !!}</p>
+                                  <p class="card-text">{!! str_limit($post->content, 255) !!}</p>
                                   <a href="{{ route("posts.show", [$post->id]) }}" class="btn btn-primary">En savoir plus... →</a>
                                 </div>
                                 <div class="card-footer text-muted">

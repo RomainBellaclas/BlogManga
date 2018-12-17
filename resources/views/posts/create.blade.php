@@ -6,7 +6,7 @@
             @lang('Nouveau Post')
         @endslot
 
-            <form action="/posts" method="POST">
+            <form action="/posts" method="POST" enctype="multipart/form-data">
                 <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
                 <script>
                         tinymce.init({
@@ -23,15 +23,19 @@
                 {{ csrf_field() }}
 
                         <div class="form-group">
-                        <label for="exampleFormControlFile1">Ajouter une image</label>
-                        <input type="file" class=" form-control-file" id="exampleFormControlFile1">
+                            <label for="image">Ajouter une image</label>
+                            <input type="file" class=" form-control-file " id="image" name="image">
+                        </div>
+
+                        <div class="form-group">
+                            <img id="preview" class="img-fluid" src="#" alt="">
                         </div>
 
                     <hr>
 
-                    <div class="form-group">
+                    <div class="form-group ">
                     <label for="title">Title</label>
-                    <input id="title" class="form-control" type="text" name="title" placeholder="title">
+                    <input id="title" class="form-control col-md-6 mx-auto" type="text" name="title" placeholder="title">
                     </div>
                     
                     <hr>
@@ -39,7 +43,7 @@
                     <!-- the comment box -->
                     <div class="form-group">
                         <label for="content">Contenu</label>
-                        <textarea id="content" class="form-control" name="content" rows="3"></textarea>
+                        <textarea id="content" class="form-control" name="content" rows="15"></textarea>
                     </div>
                     
 
@@ -50,4 +54,22 @@
 
     @endcomponent
   
+@endsection
+
+@section('script')
+    <script>
+        $(() => {
+            $('input[type="file"]').on('change', (e) => {
+                let that = e.currentTarget
+                if (that.files && that.files[0]) {
+                    $(that).next('.custom-file-label').html(that.files[0].name)
+                    let reader = new FileReader()
+                    reader.onload = (e) => {
+                        $('#preview').attr('src', e.target.result)
+                    }
+                    reader.readAsDataURL(that.files[0])
+                }
+            })
+        })
+    </script>
 @endsection

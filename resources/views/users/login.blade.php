@@ -12,12 +12,12 @@
 
                     <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input id="mail" class="form-control" type="email" name="mail" placeholder="Email">
+                    <input id="mail" class="form-control col-md-5 mx-auto" type="email" name="mail" placeholder="Email">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input id="password" class="form-control" type="password" name="password" placeholder="Password">
+                        <input id="password" class="form-control col-md-5 mx-auto" type="password" name="password" placeholder="Password">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>    
