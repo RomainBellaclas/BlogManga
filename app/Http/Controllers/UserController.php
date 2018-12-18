@@ -126,8 +126,10 @@ class UserController extends Controller
                 Session::put("user", $user);
                 return redirect("/");
             }
-            return back()->withErrors("Invalid email or password");    
+            return back()->withErrors("Invalid email or password");
+                
         }
+        return back()->withErrors("Invalid email or password");
 
     }
 

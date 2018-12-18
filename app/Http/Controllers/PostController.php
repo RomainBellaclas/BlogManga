@@ -41,6 +41,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        debug($request->all());
         $request->validate([
             "title" => "required|max:255",
             "content" => "required",
@@ -56,7 +57,7 @@ class PostController extends Controller
         Post::create([
             "title"=>$request->input("title"),
             "content"=>$request->input("content"),
-            "image"=>$request->$path,
+            "image"=>$path,
             "user_id"=>Session::get("user")->id,
         ]);
 

@@ -4,7 +4,7 @@
 @section("card")
     @component("components.card")
         @slot("title")
-            @lang("Se'enregistrer")
+            @lang("S'enregistrer")
         @endslot
             <form action="/users" method="POST">
 

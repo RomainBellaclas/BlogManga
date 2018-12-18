@@ -50,7 +50,7 @@
         @foreach($posts as $post)
                       <!-- Blog Post -->
             <div class="card mb-4">
-                <img class="card-img-top" src="{{('images/XmasMiku.jpg')}}" alt="Card image cap">
+            <img class="card-img-top" src="{{ url('thumbs/' . $post->image) }}" alt="Card image cap">
                 <div class="card-body">
                   <h2 class="card-title">{{ $post->title }}</h2>
                   <p class="card-text ">{!! str_limit($post->content, 255) !!}</p>
