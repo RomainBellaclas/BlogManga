@@ -24,7 +24,7 @@
                 <hr>
       
                 <!-- Preview Image -->
-                <img class="card-img-top" src="{{asset('images/Aposimz.jpg')}}" alt="Card image cap">
+                <img class="card-img-top" src="{{url($post->image)}}" alt="Card image cap">
       
                 <hr>
       
